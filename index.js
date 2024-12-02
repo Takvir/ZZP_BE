@@ -1,10 +1,10 @@
 const express = require('express');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv');  // To load environment variables
 const cors = require('cors');
-const db = require('./config/db');
+const db = require('./config/db'); // Import the database configuration
 const layout1Routes = require('./routes/layout1');
 
-// Load environment variables
+// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000; // Default to 3000 if PORT is not set
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
