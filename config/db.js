@@ -1,12 +1,12 @@
 const mysql = require('mysql2');
-require('dotenv').config(); // Load environment variables
+require('dotenv').config(); 
 
 const pool = mysql.createPool({
-  host: process.env.MYSQL_ADDON_HOST,         // From .env
-  user: process.env.MYSQL_ADDON_USER,         // From .env
-  password: process.env.MYSQL_ADDON_PASSWORD, // From .env
-  database: process.env.MYSQL_ADDON_DB,       // From .env
-  port: process.env.MYSQL_ADDON_PORT || 3306  // Default to 3306 if not set
+  host: process.env.MYSQL_ADDON_HOST,         
+  user: process.env.MYSQL_ADDON_USER,         
+  password: process.env.MYSQL_ADDON_PASSWORD, 
+  database: process.env.MYSQL_ADDON_DB,       
+  port: process.env.MYSQL_ADDON_PORT || 3306 
 });
 
 const promisePool = pool.promise();
